@@ -5,14 +5,20 @@ from django.views import generic
 from .models import Book, Author, BookInstance, Genre, Language
 
 class BookListView(generic.ListView):
-    model = Book
+   model = Book
+   paginate_by = 10
+
 
 class AuthorListView(generic.ListView):
-    model = Author
-
-
+   model = Author
+   paginate_by = 10
+  
 class BookDetailView(generic.DetailView):
-    model = Book
+   model = Book
+
+
+class AuthorDetailView(generic.DetailView):
+   model = Author
 
 
 def index(request):
